@@ -231,8 +231,6 @@ const titles={overview:['YOUR PERSONAL SPACE','A little more organized.'],items:
  html=`<input class="search" id="searchBox" placeholder="Search your saved items…" oninput="filterItems(this.value)" aria-label="Search saved items"><div class="panel list" id="itemsList">${[...entries].sort((a,b)=>b.created-a.created).map(card).join('')||empty('No saved items yet','Add something you want to keep.')}</div>`;
 } else if(currentView==='reminders'){
  html=`<div class="section-head"><h2>Upcoming and overdue</h2><span>${dated.length} dated items</span></div><div class="panel list">${[...overdue,...upcoming].map(card).join('')||empty('No dated items yet','Add a date when you save a reminder or item.')}</div><div class="hint"><b>Prototype note:</b> These dates appear in the app, but this version does not send emails, texts, or push notifications. We'll add reliable notifications in a later version.</div>`;
- } else if(currentView==='overdue'){
-    html=`<div class="section-head"><h2>Past-due items</h2><span>${overdue.length} overdue</span></div><div class="panel list">${overdue.map(card).join('')||empty('Nothing is overdue','You have no past-due items. Great job!')}</div>`;
  }
  html=`<div class="section-head"><h2>Past-due items</h2><span>${overdue.length} overdue</span></div><div class="panel list">${overdue.map(card).join('')||empty('Nothing is overdue','You have no past-due items. Great job!')}</div>`;
  }
